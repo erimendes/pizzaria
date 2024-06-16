@@ -2,12 +2,12 @@ import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
 
-import styles from '@/styles/home.module.css';
+import styles from "@/styles/home.module.css";
 
-import logoImg from '@/public/logo.svg'
+import logoImg from "@/public/logo.svg";
 
-import { Input, TextArea } from '../components/ui/Input';
-import { Button} from '../components/ui/Button';
+import { Input, TextArea } from "../components/ui/Input";
+import { Button } from "../components/ui/Button";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,27 +20,19 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main >
+      <main>
         <div className={styles.containerCenter}>
           <Image src={logoImg} alt="Logo Pizzaria" />
 
           <div>
-            <form >
-              <Input 
-                placeholder="Usuário"
-                type="text"
-              />
-              <Input 
-                placeholder="Senha"
-                type="password"
-              />
-              <Button
-                type="submit"
-                loading={true}
-              >
+            <form>
+              <Input placeholder="Usuário" type="text" />
+              <Input placeholder="Senha" type="password" />
+              <Button type="submit" loading={false}>
                 Acessar
               </Button>
             </form>
+            <a className={styles.text}>Não possui uma conta? Cadastre-se</a>
           </div>
         </div>
       </main>
