@@ -4,6 +4,8 @@ services:
   # PostgreSQL database service
   db:
     image: postgres:latest # Use the official PostgreSQL image
+    ports:
+      - "5432:5432"
     environment:
       POSTGRES_PASSWORD: password # Set an environment variable for the password
     volumes:
