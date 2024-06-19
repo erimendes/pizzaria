@@ -28,7 +28,7 @@ export default function Home() {
     event.preventDefault();
 
     if (email === "" || password === "") {
-      toast.error("Preencha os campos");
+      toast.error("Preencha todos os campos");
       return;
     }
 
