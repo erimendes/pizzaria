@@ -78,14 +78,13 @@ export function AuthProvider({children}: AuthProviderProps){
 
   async function signIn({ email, password }: SignInProps){
     setLoadingAuth(true);
-    alert('chegou aqui '+ email)
 
     try{
       const response = await api.post('/session', {
         email,
         password
       })
-      console.log(response.data);
+      //console.log(response.data);
 
       const { id, name, token } = response.data;
 
@@ -97,7 +96,6 @@ export function AuthProvider({children}: AuthProviderProps){
 
       api.defaults.headers.common['Authorization'] = `Bearer ${token}`
 
-      alert(id)
 
       setUser({
         id,
@@ -111,7 +109,6 @@ export function AuthProvider({children}: AuthProviderProps){
 
     }catch(err){
       console.log('erro ao acessar', err)
-      alert("erro")
       setLoadingAuth(false);
     }
 

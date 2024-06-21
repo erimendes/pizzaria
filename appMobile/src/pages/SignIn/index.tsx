@@ -7,7 +7,7 @@ import {
   TextInput,
   TouchableOpacity,
   ActivityIndicator
-} from 'react-native';
+} from 'react-native'
 
 import { AuthContext } from '../../contexts/AuthContext'
 
@@ -21,7 +21,6 @@ export default function SignIn(){
   async function handleLogin(){
 
     if(email === '' || password === ''){
-      alert("Email vazio")
       return;
     }
 
