@@ -1,16 +1,15 @@
-import { useContext  } from 'react'
-import styles from './styles.module.scss'
-import Link from 'next/link'
+import { useContext } from "react";
+import styles from "./styles.module.scss";
+import Link from "next/link";
 
-import { FiLogOut } from 'react-icons/fi'
+import { FiLogOut } from "react-icons/fi";
 
-import { AuthContext } from '../../contexts/AuthContext'
+import { AuthContext } from "../../contexts/AuthContext";
 
-export function Header(){
+export function Header() {
+  const { signOut } = useContext(AuthContext);
 
-  const { signOut } = useContext(AuthContext)
-
-  return(
+  return (
     <header className={styles.headerContainer}>
       <div className={styles.headerContent}>
         <Link href="/dashboard">
@@ -18,20 +17,15 @@ export function Header(){
         </Link>
 
         <nav className={styles.menuNav}>
-          <Link href="/category">
-            <a>Categoria</a>
-          </Link>
+          <Link href="/category">Categoria</Link>
 
-          <Link href="/product">
-            <a>Cardapio</a>
-          </Link>   
+          <Link href="/product">Cardapio</Link>
 
           <button onClick={signOut}>
             <FiLogOut color="#FFF" size={24} />
-          </button>       
+          </button>
         </nav>
-
       </div>
     </header>
-  )
+  );
 }
