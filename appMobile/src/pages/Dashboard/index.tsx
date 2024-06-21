@@ -1,4 +1,4 @@
-import React, { useState }  from 'react';
+import React, { useContext, useState }  from 'react';
 import { View, Text, SafeAreaView, TouchableOpacity, TextInput, StyleSheet} from 'react-native'
 
 import { useNavigation } from '@react-navigation/native'
@@ -8,11 +8,14 @@ import { StackPramsList } from '../../routes/app.routes'
 
 import { api } from '../../services/api'
 
+import { AuthContext } from '../../contexts/AuthContext'
+
 export default function Dashboard(){
   const navigation = useNavigation<NativeStackNavigationProp<StackPramsList>>();
 
   const [number, setNumber] = useState('');
  
+  const { signOut } = useContext(AuthContext)
 
   async function openOrder(){
     if(number === ''){
@@ -48,6 +51,10 @@ export default function Dashboard(){
         <TouchableOpacity style={styles.button} onPress={openOrder}>
           <Text style={styles.buttonText}>Abrir mesa</Text>
         </TouchableOpacity>
+
+        <TouchableOpacity style={styles.button} onPress={signOut}>
+            <Text style={styles.buttonText}>Sair</Text>
+        </TouchableOpacity>   
 
     </SafeAreaView>
   )

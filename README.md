@@ -9,3 +9,4 @@
 
 # Exemplo EXPO de login no GITHUB
 https://github.com/lumamontes/expo-router-auth
+https://dev.to/proesc/fluxo-de-autenticacao-no-react-native-usando-expo-router-61h
