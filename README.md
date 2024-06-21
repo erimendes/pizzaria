@@ -7,5 +7,5 @@
 # Em 21-06-2024
 ## backend e mobile funcionando
 
-#Exemplo EXPO de login no GITHUB
+# Exemplo EXPO de login no GITHUB
 https://github.com/lumamontes/expo-router-auth
