@@ -1,5 +1,4 @@
-
-.container{
+.container {
   max-width: 720px;
   margin: 4rem auto;
   padding: 0 2rem;
@@ -9,19 +8,19 @@
   flex-direction: column;
 }
 
-.container h1{
+.container h1 {
   color: var(--white);
 }
 
-.form{
+.form {
   display: flex;
   flex-direction: column;
   margin: 1rem 0;
 }
 
-.input{
+.input {
   background-color: var(--dark-900);
-  border:0;
+  border: 0;
   padding: 1rem;
   height: 40px;
   border-radius: 0.3rem;
@@ -30,12 +29,24 @@
   margin-bottom: 1rem;
 }
 
-.buttonAdd{
+.buttonAdd {
   height: 40px;
-  border:0;
+  border: 0;
   background-color: var(--green-900);
   font-weight: bold;
   font-size: 1.2rem;
   border-radius: 0.3rem;
-  color: var(--dark-700)
+  color: var(--dark-700);
+}
+
+.categoryList {
+  list-style: none;
+  padding: 0;
+  margin-top: 2rem;
+  color: var(--white);
+}
+
+.categoryItem {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--gray-100);
 }
