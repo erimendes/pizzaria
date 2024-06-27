@@ -8,10 +8,15 @@
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-}
 
-.container h1{
-  color: var(--white);
+  h1{
+    color: var(--white);
+  }
+
+  h2{
+    margin-top: 2rem;
+    color: var(--white);
+  }
 }
 
 .form{
