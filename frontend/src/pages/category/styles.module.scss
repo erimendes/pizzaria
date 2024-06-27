@@ -59,11 +59,20 @@
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+
+  h1 {
+    color: var(--white);
+  }
+
+  h2 {
+    margin-top: 2rem;
+    color: var(--white);
+  }
 }
 
-.container h1 {
-  color: var(--white);
-}
+// .container h1 {
+//   color: var(--white);
+// }
 
 .form {
   display: flex;
@@ -95,7 +104,7 @@
 .categoryList {
   list-style: none;
   padding: 0;
-  margin-top: 2rem;
+  margin-top: 1rem;
   color: var(--white);
 }
 

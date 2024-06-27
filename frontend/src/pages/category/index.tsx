@@ -147,8 +147,10 @@ export default function Category({ categories }: CategoryProps) {
 
   async function handleEditCategory(id: string, newName: string) {
     const apiClient = setupAPIClient();
+    
     try {
-      await apiClient.put(`/category/${id}`, { name: newName });
+      const response = await apiClient.put(`/category/${id}`, { name: newName });
+
       toast.success("Categoria editada com sucesso!");
       setCategoryList(
         categoryList.map((cat) =>
@@ -234,7 +236,8 @@ export default function Category({ categories }: CategoryProps) {
                     <div className={styles.actions}>
                       <FiEdit
                         size={20}
-                        color="#3b3b3b"
+                        // color="#3b3b3b"
+                        color="yellow"
                         onClick={() => {
                           setEditingId(category.id);
                           setEditingName(category.name);
@@ -242,7 +245,7 @@ export default function Category({ categories }: CategoryProps) {
                       />
                       <FiTrash
                         size={20}
-                        color="#3b3b3b"
+                        color="red"
                         onClick={() => handleDeleteCategory(category.id)}
                       />
                     </div>
@@ -259,13 +262,22 @@ export default function Category({ categories }: CategoryProps) {
 
 export const getServerSideProps: GetServerSideProps<CategoryProps> = canSSRAuth(
   async (ctx) => {
-    const apiClient = setupAPIClient(ctx);
-    const response = await apiClient.get("/category");
+    try {
+      const apiClient = setupAPIClient(ctx);
+      const response = await apiClient.get("/category");
 
-    return {
-      props: {
-        categories: response.data,
-      },
-    };
+      return {
+        props: {
+          categories: response.data,
+        },
+      };
+    } catch (error) {
+      console.error("Error fetching categories:", error.message);
+      return {
+        props: {
+          categories: [],
+        },
+      };
+    }
   }
 );
