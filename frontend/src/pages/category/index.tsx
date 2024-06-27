@@ -167,6 +167,7 @@ export default function Category({ categories }: CategoryProps) {
   async function handleDeleteCategory(id: string) {
     const apiClient = setupAPIClient();
     try {
+      alert(id)
       await apiClient.delete(`/category/${id}`);
       toast.success("Categoria apagada com sucesso!");
       setCategoryList(categoryList.filter((cat) => cat.id !== id));
