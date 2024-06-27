@@ -12,6 +12,7 @@ import { DeleteCategoryController } from './controllers/category/DeleteCategoryC
 
 import { CreateProductController } from './controllers/product/CreateProductController'
 import { ListByCategoryController } from './controllers/product/ListByCategoryController'
+import { ListProductController } from './controllers/product/ListProductController';
 
 import { CreateOrderController } from './controllers/order/CreateOrderController'
 import { RemoveOrderController } from './controllers/order/RemoveOrderController'
@@ -28,6 +29,7 @@ import { FinishOrderController } from './controllers/order/FinishOrderController
 import { isAuthenticated } from './middlewares/isAuthenticated'
 
 import uploadConfig from './config/multer'
+
 
 const router = Router();
 
@@ -49,7 +51,7 @@ router.delete('/category/:id', isAuthenticated, new DeleteCategoryController().h
 
 //-- ROTAS PRODUCT
 router.post('/product', isAuthenticated, upload.single('file'), new CreateProductController().handle )
-
+router.get('/product', isAuthenticated, new ListProductController().handle );
 router.get('/category/product', isAuthenticated, new ListByCategoryController().handle )
 
 //-- ROTAS ORDER
