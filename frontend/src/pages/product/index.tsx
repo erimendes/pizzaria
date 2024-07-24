@@ -1718,6 +1718,7 @@ export default function Product({ categoryList, productList }: Props) {
   const [description, setDescription] = useState("");
   const [categorySelected, setCategorySelected] = useState("");
   const [avatarUrl, setAvatarUrl] = useState<string | null>(null);
+  const [avatar, setAvatar] = useState<string | null>(null);
   const [imageAvatar, setImageAvatar] = useState<File | null>(null);
   const [products, setProducts] = useState<Product[]>(productList);
   const [editingProduct, setEditingProduct] = useState<Product | null>(null);
