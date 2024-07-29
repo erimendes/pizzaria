@@ -12,7 +12,8 @@ services:
       - postgres_data:/var/lib/postgresql/data # Persist data volume
 
   pgadmin:
-    image: dpage/pgadmin4 # Use the official pgAdmin4 image
+    image: dpage/pgadmin4:8.9 # Use the official pgAdmin4 image
+    # image: dpage/pgadmin4:latest # Use the official pgAdmin4 image
     ports:
       - "5050:80" # Map container port 80 (pgAdmin) to host port 5050
     environment:
